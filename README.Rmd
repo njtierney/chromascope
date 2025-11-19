@@ -1,0 +1,132 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# chromascope
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of chromascope is to explore colours() and find interesting set of colours.
+
+## Installation
+
+You can install the development version of chromascope like so:
+
+```{r, eval = FALSE}
+# install.packages('devtools')
+devtools::install_github('njtierney/chromascope')
+
+```
+
+
+## Example
+
+chromascope provides functions to extract colour data from colours().
+
+```{r example}
+library(chromascope)
+
+```
+
+
+```{r}
+# Extract the hex code for the colour "red"
+col2hex("red")
+
+```
+
+```{r}
+# Extract the hue, chroma, and luminance (hcl) data for the colour "red"
+col2hcl("red")
+
+```
+
+```{r}
+# Extract the red, green, and blue (rgb) data for the colour "red"
+col2rgb("red")
+```
+
+```{r}
+# Extract the hex code, hcl and rgb data for the colour "red".
+colour_data("red")
+```
+
+## Example for vectors of colours
+
+chromascope can work with vectors as well.
+
+```{r}
+set.seed(19-11-2025)
+random_cols <- sample(colours(), 10)
+
+```
+
+```{r}
+col2hex(random_cols)
+```
+
+```{r}
+col2rgb(random_cols)
+```
+
+```{r}
+col2hcl(random_cols)
+```
+
+```{r}
+colour_data(random_cols)
+```
+
+## Visualise the colours on specplot() and swatchplot()
+
+```{r}
+library(colorspace)
+
+random_cols <- colour_data(random_cols)
+
+swatchplot(random_cols$name)
+
+
+
+```
+
+
+```{r}
+specplot(random_cols$hex)
+```
+
+```{r}
+# Arrange the random colours based on the hue and visualise using specplot()
+library(dplyr)
+
+random_cols |>
+  arrange(luminance) |>
+  pull(hex) |>
+  specplot()
+
+random_cols |>
+  arrange(chroma) |>
+  pull(hex) |>
+  specplot()
+
+random_cols |>
+  arrange(hue) |>
+  pull(hex) |>
+  specplot()
+
+
+```
+
+
