@@ -130,3 +130,25 @@ random_cols |>
 ```
 
 
+# Find nearest R colours
+
+```{r}
+library(colorspace)
+qual_cols <- qualitative_hcl(7)
+qual_cols
+swatchplot(qual_cols)
+near_qual_cols <- nearest_colour(qual_cols)
+near_qual_cols
+
+library(dplyr)
+
+near_qual_cols |> 
+  pull(hex_base) |> 
+  swatchplot(qual_cols)
+
+near_qual_cols |> 
+  pull(hex_base) |> 
+  specplot(qual_cols)
+
+```
+
