@@ -14,5 +14,6 @@ Imports:
     colorspace,
     dplyr,
     farver,
+    rlang,
     tibble
 URL: https://njtierney.github.io/chromascope/
