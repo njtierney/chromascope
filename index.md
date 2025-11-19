@@ -120,7 +120,6 @@ colour_data(random_cols)
 
 ``` r
 library(colorspace)
-#> Warning: package 'colorspace' was built under R version 4.5.2
 
 random_cols <- colour_data(random_cols)
 
@@ -174,3 +173,47 @@ random_cols |>
 ```
 
 ![](reference/figures/README-unnamed-chunk-14-3.png)
+
+# Find nearest R colours
+
+``` r
+library(colorspace)
+qual_cols <- qualitative_hcl(7)
+qual_cols
+#> [1] "#E16A86" "#C18500" "#799D00" "#00AB6E" "#00A9BE" "#6C8EE6" "#D169D0"
+swatchplot(qual_cols)
+```
+
+![](reference/figures/README-unnamed-chunk-15-1.png)
+
+``` r
+near_qual_cols <- nearest_colour(qual_cols)
+near_qual_cols
+#> # A tibble: 7 × 3
+#>   name_base      hex_base hex_input
+#>   <chr>          <chr>    <chr>    
+#> 1 lightcoral     #F08080  #E16A86  
+#> 2 darkgoldenrod3 #CD950C  #C18500  
+#> 3 olivedrab      #6B8E23  #799D00  
+#> 4 mediumseagreen #3CB371  #00AB6E  
+#> 5 turquoise3     #00C5CD  #00A9BE  
+#> 6 cornflowerblue #6495ED  #6C8EE6  
+#> 7 orchid         #DA70D6  #D169D0
+
+library(dplyr)
+
+near_qual_cols |> 
+  pull(hex_base) |> 
+  swatchplot(qual_cols)
+```
+
+![](reference/figures/README-unnamed-chunk-15-2.png)
+
+``` r
+
+near_qual_cols |> 
+  pull(hex_base) |> 
+  specplot(qual_cols)
+```
+
+![](reference/figures/README-unnamed-chunk-15-3.png)

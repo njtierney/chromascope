@@ -1,5 +1,7 @@
 <urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
 <url><loc>https://njtierney.github.io/chromascope/404.html</loc></url>
+<url><loc>https://njtierney.github.io/chromascope/LICENSE-text.html</loc></url>
+<url><loc>https://njtierney.github.io/chromascope/LICENSE.html</loc></url>
 <url><loc>https://njtierney.github.io/chromascope/authors.html</loc></url>
 <url><loc>https://njtierney.github.io/chromascope/index.html</loc></url>
 <url><loc>https://njtierney.github.io/chromascope/reference/col2hcl.html</loc></url>
@@ -7,5 +9,6 @@
 <url><loc>https://njtierney.github.io/chromascope/reference/col2rgb.html</loc></url>
 <url><loc>https://njtierney.github.io/chromascope/reference/colour_data.html</loc></url>
 <url><loc>https://njtierney.github.io/chromascope/reference/index.html</loc></url>
+<url><loc>https://njtierney.github.io/chromascope/reference/nearest_colour.html</loc></url>
 </urlset>
 

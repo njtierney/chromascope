@@ -10,3 +10,5 @@
   : Convert colour to RGB values
 - [`colour_data()`](https://njtierney.github.io/chromascope/reference/colour_data.md)
   : Create a data frame of colour values
+- [`nearest_colour()`](https://njtierney.github.io/chromascope/reference/nearest_colour.md)
+  : Find closest named colours.
